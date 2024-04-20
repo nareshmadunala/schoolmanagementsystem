@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      # database name 
+      MYSQL_DATABASE: 'DBOne'
+      # mysql user for applications
+      MYSQL_USER: 'userone'
+      MYSQL_PASSWORD: 'pwone'
+      # mysql root user password
+      MYSQL_ROOT_PASSWORD: 'Abc@123'
+    ports:
+      # host port : container port 
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - mysql-db:/opt/lib/mysql-db-volume
+
+volumes:
+  mysql-db:
