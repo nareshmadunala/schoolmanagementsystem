@@ -1,36 +1,33 @@
 package com.naresh.school.accountservice.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.Hibernate;
+
+import java.util.Objects;
 
 @Entity
 @Table(name="user")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Setter
+@Getter
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userid_sequence")
-    @SequenceGenerator(name = "userid_sequence",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String firstName;
 
     private String lastName;
 
-    @Column(unique = true)
     private String email;
+
+    private String password;
 
     private String DateOfBirth;
 
@@ -40,6 +37,16 @@ public class User {
 
     private String status;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(DateOfBirth, user.DateOfBirth) && Objects.equals(gender, user.gender) && Objects.equals(type, user.type) && Objects.equals(status, user.status);
+    }
 
-    
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email, password, DateOfBirth, gender, type, status);
+    }
 }

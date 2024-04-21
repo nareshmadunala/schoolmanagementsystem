@@ -16,6 +16,6 @@ public interface UserService {
     UserResponse updateUser(UserRequest userRequest);
 
     UserResponse getUserByEmail(String email);
-
+    public UserResponse getUserProfile(String jwt);
 
 }

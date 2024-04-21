@@ -1,0 +1,16 @@
+server:
+  port: 9072
+
+spring:
+  application:
+    name: "Notification-Service"
+
+  datasource:
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    url: "jdbc:mysql://localhost:3306/notification_service"
+    username: root
+    password: Abc@123
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

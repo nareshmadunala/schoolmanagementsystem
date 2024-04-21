@@ -1,6 +1,8 @@
 package com.naresh.school.accountservice.controller;
 
 import java.util.List;
+
+import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.naresh.school.accountservice.request.UserRequest;
@@ -19,6 +21,11 @@ public class UserController {
     @GetMapping
     public List<UserResponse> getUsers(){
         return userService.getUsers();
+    }
+
+    @GetMapping("/profile")
+    public UserResponse getUserProfile(@RequestHeader("Authorization") String jwt){
+        return userService.getUserProfile(jwt);
     }
 
     @PostMapping

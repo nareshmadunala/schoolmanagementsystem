@@ -2,6 +2,8 @@ package com.naresh.school.accountservice.service.impl;
 
 import java.util.List;
 
+import com.naresh.school.accountservice.config.JwtProvider;
+import com.naresh.school.accountservice.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.naresh.school.accountservice.mapper.UserMapper;
@@ -23,12 +25,15 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private NotificationService notificationService;
 
     @Override
     @Transactional
     public UserResponse addUser(UserRequest userRequest){
         User user = userMapper.convertUserRequestToUser(userRequest);
         user = userRepository.save(user);
+        System.out.println(notificationService.sendEmail());
         UserResponse userResponse = userMapper.convertUserToUserResponse(user);
         return userResponse;
     }
@@ -58,7 +63,15 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserResponse getUserByEmail(String email){
-        User user = userRepository.getUserByEmail(email);
+        User user = userRepository.findByEmail(email);
+        UserResponse userResponse = userMapper.convertUserToUserResponse(user);
+        return userResponse;
+    }
+
+    @Override
+    public UserResponse getUserProfile(String jwt){
+        String email = JwtProvider.getEmailFromJwtToken(jwt);
+        User user = userRepository.findByEmail(email);
         UserResponse userResponse = userMapper.convertUserToUserResponse(user);
         return userResponse;
     }

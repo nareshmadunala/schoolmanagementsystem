@@ -19,6 +19,8 @@ public class UserRequest {
     @Email(message = " Not Valid Email ")
     private String email;
 
+    private String password;
+
     private String DateOfBirth;
 
     private String gender;

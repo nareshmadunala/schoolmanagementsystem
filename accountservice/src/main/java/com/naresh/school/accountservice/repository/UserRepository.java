@@ -8,6 +8,6 @@ import com.naresh.school.accountservice.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    public User getUserByEmail(String email);
+    public User findByEmail(String email);
 
 }
