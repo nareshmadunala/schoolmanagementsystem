@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Abc@123'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - mysql-db:/Users/nareshmadunala/nws/docker_volumes/mysql/data
+
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    expose:
+      - '6379'
+    volumes:
+      - redis_data:/Users/nareshmadunala/nws/docker_volumes/redis/data
+
+volumes:
+  mysql-db:
+  redis_data:
