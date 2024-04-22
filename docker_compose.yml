@@ -13,7 +13,7 @@ services:
     expose:
       - '3306'
     volumes:
-      - mysql-db:/Users/nareshmadunala/nws/docker_volumes/mysql/data
+      - mysql-db:/D:/nws/dockerV/mysql/data
 
   redis:
     image: redis:latest
@@ -23,7 +23,7 @@ services:
     expose:
       - '6379'
     volumes:
-      - redis_data:/Users/nareshmadunala/nws/docker_volumes/redis/data
+      - redis_data:/D:/nws/dockerV/redis/data
 
 volumes:
   mysql-db:

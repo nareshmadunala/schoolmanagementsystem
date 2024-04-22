@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -22,7 +23,7 @@ public class UserController {
 
 
     @GetMapping
-    @Cacheable(value = "users", key = "'users'")
+    @Cacheable("users")
     public List<UserResponse> getUsers(){
         return userService.getUsers();
     }
@@ -33,7 +34,6 @@ public class UserController {
     }
 
     @PostMapping
-    @CachePut(value = "users", key = "'users'")
     public UserResponse addUser(@Valid @RequestBody UserRequest userRequest){
         return userService.addUser(userRequest);
     }
