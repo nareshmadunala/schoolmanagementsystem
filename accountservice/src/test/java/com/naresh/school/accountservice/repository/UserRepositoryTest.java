@@ -11,16 +11,20 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.sql.DataSource;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@ExtendWith(SpringExtension.class)
 @DataJpaTest
 class UserRepositoryTest {
 
+    @Autowired
+    private DataSource dataSource;
 
     @Autowired
     private TestEntityManager entityManager;
+
     @Autowired
     private UserRepository userRepository;
 

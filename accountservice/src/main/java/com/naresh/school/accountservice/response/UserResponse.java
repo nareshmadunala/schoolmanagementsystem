@@ -8,9 +8,6 @@ import java.io.Serializable;
 @Data
 public class UserResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
-
     private Long id;
 
     private String firstName;

@@ -23,7 +23,7 @@ public class UserController {
 
 
     @GetMapping
-    @Cacheable("users")
+    @Cacheable(cacheNames = "users")
     public List<UserResponse> getUsers(){
         return userService.getUsers();
     }
@@ -39,11 +39,13 @@ public class UserController {
     }
 
     @DeleteMapping
+    @CacheEvict(cacheNames = "users", key = "#id")
     public String deleteUser(@RequestParam Long id){
         return userService.deleteUser(id);
     }
 
     @PutMapping
+    @CachePut(cacheNames = "users", key = "#userRequest.id")
     public UserResponse updateUser(@RequestBody UserRequest userRequest){
         return userService.updateUser(userRequest);
     }

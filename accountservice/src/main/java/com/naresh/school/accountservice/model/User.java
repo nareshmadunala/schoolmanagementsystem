@@ -10,7 +10,7 @@ import org.hibernate.Hibernate;
 import java.util.Objects;
 
 @Entity
-@Table(name="user")
+@Table(name="users_table")
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
