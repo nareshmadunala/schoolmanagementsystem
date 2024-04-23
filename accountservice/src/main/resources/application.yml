@@ -24,3 +24,15 @@ spring:
     type: redis
     redis:
       cache-null-values: true
+
+
+eureka:
+  instance:
+    hostname: localhost
+
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9080/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
