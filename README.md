@@ -46,10 +46,10 @@
  6. Authentication using JWT
 
 
+#### OpenAPI - Swagger UI:
+http://localhost:9071/swagger-ui/index.html
 
-Anguler :
-
-
- http://localhost:4200/
+#### Anguler :
+http://localhost:4200/
 
  
