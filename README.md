@@ -1,4 +1,4 @@
-# School Management System - Backend
+# School Management System 
 
 
 ### 1. Java 17
@@ -46,3 +46,10 @@
  6. Authentication using JWT
 
 
+
+Anguler :
+
+
+ http://localhost:4200/
+
+ 
