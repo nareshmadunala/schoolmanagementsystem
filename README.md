@@ -32,8 +32,9 @@
  
 ### Microservices:
 
- 1. Account Service
- 2. Notification Service 
+ 1. Account Service [localhost:9071]
+ 2. Notification Service [localhost:9072]
+ 3. Service Register and Discovery [localhost:9080]
 
  
 ### Concepts Covered:
@@ -45,11 +46,26 @@
  5. Distributed Caching using Redis 
  6. Authentication using JWT
 
+MySQL: 3306
+Redis: 6379
+
+
+
 
 #### OpenAPI - Swagger UI:
 http://localhost:9071/swagger-ui/index.html
 
 #### Anguler :
 http://localhost:4200/
+
+
+Redis Commands:
+docker exec -it some-redis bash
+redis-cli
+keys *
+
+
+Docker Commands:
+docker ps
 
  
