@@ -11,6 +11,7 @@
 ### 8. JWT 0.11.5
 ### 9. Modelmapper 3.2.0
 ### 10. lombok
+### 11. MongoDB
  
  <p>&nbsp;</p>
  
@@ -23,6 +24,7 @@
  5. Data redis
  6. Validation 
  7. Test
+ 8. data mongodb
 
 
 ### Spring Cloud Modules:
@@ -35,6 +37,7 @@
  1. Account Service [localhost:9071]
  2. Notification Service [localhost:9072]
  3. Service Register and Discovery [localhost:9080]
+ 4. Book Service [localhost:9073]
 
  
 ### Concepts Covered:
@@ -48,8 +51,7 @@
 
 MySQL: 3306
 Redis: 6379
-
-
+MongoDB: 27017
 
 
 #### OpenAPI - Swagger UI:
