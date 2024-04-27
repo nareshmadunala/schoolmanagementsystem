@@ -25,6 +25,18 @@ services:
     volumes:
       - redis_data:/D:/nws/dockerV/redis/data
 
+  mongo:
+    image: mongo
+    restart: no
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    expose:
+      - '27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password  
+
 volumes:
   mysql-db:
   redis_data:
