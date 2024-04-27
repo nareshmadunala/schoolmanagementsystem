@@ -1,2 +1,22 @@
 server:
   port: 9073
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      database: bookdb
+      host: localhost
+      password: password
+      port: 27017
+      username: root
+
+eureka:
+  instance:
+    hostname: localhost
+
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9080/eureka/
+    register-with-eureka: true
+    fetch-registry: true
