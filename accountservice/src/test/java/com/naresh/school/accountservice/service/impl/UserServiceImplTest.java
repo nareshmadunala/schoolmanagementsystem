@@ -41,7 +41,7 @@ class UserServiceImplTest {
         User user = new User();
         user.setId(Long.parseLong("1"));
         user.setFirstName("Naresh");
-        user.setLastName("kumar");*--------------*
+        user.setLastName("kumar");
         user.setEmail("naresh@kumar.com");
         user.setDateOfBirth("1988-10-10");
         user.setGender("m");

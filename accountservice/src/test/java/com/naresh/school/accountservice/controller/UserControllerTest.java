@@ -74,7 +74,7 @@ class UserControllerTest {
     }
 
     @Test
- 0-------------------------*   void updateUser() {
+    void updateUser() {
     }
 
     @Test

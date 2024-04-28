@@ -40,3 +40,11 @@ services:
 volumes:
   mysql-db:
   redis_data:
+
+
+networks:
+  stack:
+    name: stack
+    driver: bridge
+
+    
