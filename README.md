@@ -74,7 +74,9 @@ Note: start docker desktop
 #### docker ps -a [to see hidden containers]
 #### docker image list
 #### docker build -t <repository>:<tag> .  [ or maven plug in also works "mvn spring-boot:buid-image"]
-#### docker build -t schoolapps:discoveryservice .
+#### docker build -t discoveryservice:latest .
+#### docker build -t notificationservice:latest .
+#### docker build -t accountservice:latest .
 #### docker run -p 9080:9080 -i -t <container_Repository>:<Tag>
 #### docker run -p 9080:9080 -i <image_id>
 #### docker rmi <image_id>
