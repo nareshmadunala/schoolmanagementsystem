@@ -70,18 +70,18 @@ keys *
 Docker Commands:
 Note: start docker desktop
 
-docker ps
-docker ps -a [to see hidden containers]
-docker image list
-docker build -t <repository>:<tag> .  [ or maven plug in also works "mvn spring-boot:buid-image"]
-docker build -t schoolapps:discoveryservice .
-docker run -p 9080:9080 -i -t <container_Repository>:<Tag>
-docker run -p 9080:9080 -i <image_id>
-docker rmi <image_id>
-docker stop <container_id>
-docker rm <container_id>
-docker kill <container_id>
-docker image prune -a [to clean up ]
+#### docker ps
+#### docker ps -a [to see hidden containers]
+#### docker image list
+#### docker build -t <repository>:<tag> .  [ or maven plug in also works "mvn spring-boot:buid-image"]
+#### docker build -t schoolapps:discoveryservice .
+#### docker run -p 9080:9080 -i -t <container_Repository>:<Tag>
+#### docker run -p 9080:9080 -i <image_id>
+#### docker rmi <image_id>
+#### docker stop <container_id>
+#### docker rm <container_id>
+#### docker kill <container_id>
+#### docker image prune -a [to clean up ]
 
 
 
