@@ -84,7 +84,20 @@ Note: start docker desktop
 #### docker rm <container_id>
 #### docker kill <container_id>
 #### docker image prune -a [to clean up ]
+docker network prune --force
 
+Note: docker compose created a new bridge network "schoolmanagementsystem_default"
+docker network inspect schoolmanagementsystem_default
 
+mvn clean install -DskipTests
+
+docker build -t discoveryservice:latest .
+docker run -p 9080:9080 --name discoveryservice  --network schoolmanagementsystem_default -it discoveryservice:latest
+
+docker build -t notificationservice:latest .
+docker run -p 9072:9072 --name notificationservice --network schoolmanagementsystem_default -it notificationservice:latest
+
+docker build -t accountservice:latest .
+docker run -p 9071:9071 --name accountservice --network schoolmanagementsystem_default -it accountservice:latest
 
 
