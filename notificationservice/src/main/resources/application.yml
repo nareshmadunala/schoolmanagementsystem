@@ -12,6 +12,7 @@ spring:
     password: Abc@123
 
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: create-drop
 
