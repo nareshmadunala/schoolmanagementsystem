@@ -1,0 +1,15 @@
+{
+  "namespace": "com.naresh.school.dataservice.dto",
+  "type": "record",
+  "name": "Book",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}
