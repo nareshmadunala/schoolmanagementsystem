@@ -24,4 +24,9 @@ public class BookController {
         return bookServiceImpl.saveBook(book);
     }
 
+    @DeleteMapping
+    public void deleteBook(@RequestParam String id){
+        bookServiceImpl.deleteBookById(id);
+    }
+
 }

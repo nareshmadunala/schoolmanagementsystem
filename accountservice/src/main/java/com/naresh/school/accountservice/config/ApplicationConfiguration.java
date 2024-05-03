@@ -29,7 +29,7 @@ public class ApplicationConfiguration {
                                 SessionCreationPolicy.STATELESS
                         )
                 ).authorizeHttpRequests(
-                        Authorize -> Authorize.requestMatchers("/api/**")
+                        Authorize -> Authorize.requestMatchers("/temp/**")
                                 .authenticated().anyRequest().permitAll())
                 .addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
                 .csrf(csrf -> csrf.disable())

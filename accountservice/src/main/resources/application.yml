@@ -13,11 +13,11 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
 
   redis:
-    host: localhost
+    host: redis-1
     port: 6379
 
   cache:
@@ -28,7 +28,7 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: discoveryservice
 
   client:
     serviceUrl:
