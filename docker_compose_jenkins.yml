@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - 9091:8080
+      - 50000:50000
+    expose:
+      - 9091
+      - 50000  
+    container_name: jenkins-lts
+    volumes:
+      - D:/docker_volums/jenkins_home:/var/jenkins_home
+      - D:/docker_volums/jenkins_home/run/docker.sock:/var/run/docker.sock
+      - D:/docker_volums/jenkins_home/bin/docker:/usr/local/bin/docker
