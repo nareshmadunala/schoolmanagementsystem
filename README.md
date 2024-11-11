@@ -74,6 +74,23 @@ Note: start docker desktop
 #### docker ps -a [to see hidden containers]
 #### docker image list
 
+Run Application:
+
+Goto Each application code base folder and run below commands,
+make sure run the apps in below order,
+
+1. discovery service
+               2. config server
+               3. apigateway
+4. account service
+5. book service
+6. notification service 
+
+ex: schoolmanagementsystem\discovery> mvn clean install -DskipTests [This will generate the jar file]
+    schoolmanagementsystem\discovery> docker build -t discoveryservice:latest . [ this will create the docker image]
+    schoolmanagementsystem\discovery> docker run -p 9080:9080 --name discoveryservice --network schoolmanagementsystem_default -it discoveryservice:latest [ this will lounch the application in docker environment ] 
+
+
 
 mvn clean install -DskipTests
 
@@ -81,12 +98,14 @@ docker build -t discoveryservice:latest .
 
 docker run -p 9080:9080 --name discoveryservice  --network schoolmanagementsystem_default -it discoveryservice:latest
 
+docker build -t accountservice:latest .
+
+docker run -p 9071:9071 --name accountservice --network schoolmanagementsystem_default -it accountservice:latest
+
 docker build -t notificationservice:latest .
 
 docker run -p 9072:9072 --name notificationservice --network schoolmanagementsystem_default -it notificationservice:latest
 
-docker build -t accountservice:latest .
 
-docker run -p 9071:9071 --name accountservice --network schoolmanagementsystem_default -it accountservice:latest
 
 
